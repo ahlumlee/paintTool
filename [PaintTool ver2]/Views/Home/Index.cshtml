@@ -1,0 +1,68 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" ng-app="MyApp">
+<head>
+    <base href="/" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/StyleSheet1.css" rel="stylesheet" />
+    <title>_PaintTool_ver2_</title>
+</head>
+<body ng-controller="AccountController as account">
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">PaintTool</a>
+            </div>
+            @*<h1>Welcome to PaintTool webpage</h1>*@
+            <ul class="nav navbar-nav" role="navigation">
+                <li class="active">
+                    <a href="/" role="tab" data-toggle="tab">
+                        <icon class="fa fa-home"></icon>  Home
+                    </a>
+                </li>
+                <li>
+                    <a href="/about" role="tab" data-toggle="tab">
+                        <i class="fa fa-child"></i>  About
+                    </a>
+                </li>
+                <li>
+                    <a href="/paintTool" role="tab" data-toggle="tab">
+                        <i class="fa fa-paint-brush"></i>  Paint Tool
+
+                    </a>
+                </li>
+                <li>
+                    <a href="/login" role="tab" data-toggle="tab" ng-show="!account.isLoggedIn()">
+                        <i class="fa fa-sign-in"></i>  login
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a href="#" role="tab" data-toggle="tab" ng-click="account.logout()" ng-show="account.isLoggedIn()">
+                        <i class="fa fa-sign-out"></i>  logout
+                    </a>
+                </li>
+            </ul>
+
+
+
+        </div>
+    </nav>
+    <div class="container">
+
+        <div ng-view></div>
+    </div>
+
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/angular-resource.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+
+    <script src="~/ngApp/app.js"></script>
+    <script src="~/ngApp/services/accountService.js"></script>
+    <script src="~/ngApp/services/PaintToolServices.js"></script>
+    <script src="~/ngApp/services/MemberService.js"></script>
+
+    <script src="~/ngApp/controllers/accountController.js"></script>
+    <script src="~/ngApp/controllers/PaintToolController.js"></script>
+    <script src="~/ngApp/controllers/MemberController.js"></script>
+</body>
+</html>
